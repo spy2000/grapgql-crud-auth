@@ -15,7 +15,7 @@ const Profile = () => {
     });
 
 
-    const {userDetail} = useContext(UserData)
+    const {userDetail,_,setAuthToken} = useContext(UserData)
 
     const onInputChange =(e)=>{
         const {name,value} = e.target
@@ -39,14 +39,16 @@ const Profile = () => {
         } catch (error) {
             
         }
-        // setUser(null)
     }
 
 
     useEffect(()=>{
-        if(!userDetail){
-            return navigate("/login")
+        const token = localStorage.getItem("authToken")
+        console.log(token)
+        if(token && token !== "null"){
+            setAuthToken(token)
         }
+    
     },[])
 
 

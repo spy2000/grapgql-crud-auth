@@ -54,24 +54,17 @@ useEffect(() => {
         setLoginDetail(initialLoginDetail)
         setAuthToken(data.loginUser.token)
         return navigate("/profile")
-        //   setUserDetail(data.getMyData)
     }
 }, [loading, error, data,navigate,setAuthToken])
 
 
 
 useEffect(()=>{
-
-    // if(userDetail){
-    //     console.log(userDetail)
-    //    return  navigate("/profile")
-    // }else{
     const token = localStorage.getItem("authToken")
     console.log(token)
-    if(token){
+    if(token && token !== "null"){
         setAuthToken(token)
     }
-// }
 
 },[])
 

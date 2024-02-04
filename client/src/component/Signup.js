@@ -62,20 +62,16 @@ const Signup = () => {
         }
     }, [loading, error, data,navigate])
 
-    useEffect(()=>{
 
-        if(userDetail){
-            console.log(userDetail)
-           return  navigate("/profile")
-        }else{
+    useEffect(()=>{
         const token = localStorage.getItem("authToken")
         console.log(token)
-        if(token){
+        if(token && token !== "null"){
             setAuthToken(token)
         }
-    }
     
     },[])
+
 
     return (
         <>

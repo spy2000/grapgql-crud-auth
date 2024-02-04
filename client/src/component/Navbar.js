@@ -9,11 +9,10 @@ const Navbar = () => {
     const navigate = useNavigate()
 
 const logoutUser = () => {
-    // token = localStorage.getItem("authToken")
     localStorage.setItem("authToken",null)
     setUserDetail(null)
     setAuthToken(null)
-    // navigate("/login")
+    navigate("/login")
 
 }
 
@@ -21,7 +20,7 @@ const logoutUser = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  {/* <a className="navbar-brand" href="/"></a> */}
+
   <p></p>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
