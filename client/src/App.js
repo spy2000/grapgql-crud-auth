@@ -6,9 +6,7 @@ import Navbar from "./component/Navbar";
 import Login from "./component/Login";
 import Signup from "./component/Signup";
 import Profile from "./component/Profile";
-// import Loader from "./component/Loader"
 import { useQuery } from "@apollo/client";
-// import { CREATE_POST, DELETE_POST } from "./GraphQL/Mutation";
 import { getMyDetail } from "./GraphQL/Query";
 
 
@@ -28,9 +26,7 @@ function App() {
 
 
   useEffect(() => {
-    // Re-run the query when the condition becomes true
     if (authToken !== "null") {
-      console.log("token==>",typeof authToken,authToken)
       refetch();
     }
 
@@ -39,17 +35,12 @@ function App() {
 
 
   useEffect(() => {
-    console.log(loading, error?.message, data)
-    // if (!loading && error?.message) {
-    //   return alert(error?.message)
-    // } else 
+
     if (!loading && data && data.getMyData) {
-      console.log(data.getMyData)
       setUserDetail(data.getMyData)
       navigate("/profile")
     }else if(!loading && error?.message){
-      navigate("/login")
-      return alert(error?.message)
+      return navigate("/login")
     }
   }, [loading, error, data,navigate])
   return (

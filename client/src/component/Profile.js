@@ -24,7 +24,6 @@ const Profile = () => {
 
     const onUpdateUser = async (e)=>{
         e.preventDefault()
-        console.log(user)
         if(!user.name || !user.mobile || !user.age){
             return alert("Please fill the all field of form")
         }
@@ -44,7 +43,6 @@ const Profile = () => {
 
     useEffect(()=>{
         const token = localStorage.getItem("authToken")
-        console.log(token)
         if(token && token !== "null"){
             setAuthToken(token)
         }
@@ -53,11 +51,9 @@ const Profile = () => {
 
 
     useEffect(() => {
-        console.log(loading, error?.message, data)
         if (!loading && error?.message) {
             return alert(error?.message)
         } else if (!loading && data) {
-            console.log(data)
             setUser(null)
         }
     }, [loading, error, data,navigate])

@@ -29,7 +29,6 @@ const Signup = () => {
 
     const createUser = async (e) => {
         e.preventDefault()
-        console.log(signupDetail)
         if(!signupDetail.name || !signupDetail.email || !signupDetail.mobile || !signupDetail.age ||!signupDetail.password){
             return alert("Please fill the all field")
         }else if(signupDetail.password !== signupDetail.cPassword){
@@ -52,11 +51,9 @@ const Signup = () => {
 
 
     useEffect(() => {
-        console.log(loading, error?.message, data)
         if (!loading && error?.message) {
             return alert(error?.message)
         } else if (!loading && data) {
-            console.log(data.registerUser.id)
             setSignupDetail(initialSignupDetail)
             navigate("/login")
         }
@@ -65,7 +62,7 @@ const Signup = () => {
 
     useEffect(()=>{
         const token = localStorage.getItem("authToken")
-        console.log(token)
+   
         if(token && token !== "null"){
             setAuthToken(token)
         }

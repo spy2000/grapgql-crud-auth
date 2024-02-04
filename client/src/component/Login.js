@@ -26,7 +26,6 @@ const onInputChange = (e) => {
 
 const login = async (e) => {
     e.preventDefault()
-    console.log(loginDetail)
     if(!loginDetail.email || !loginDetail.password){
         return alert("Please fill the all field")
     }
@@ -45,11 +44,9 @@ const login = async (e) => {
 
 
 useEffect(() => {
-    console.log(loading, error?.message, data)
     if (!loading && error?.message) {
         return alert(error?.message)
     } else if (!loading && data) {
-        console.log(data.loginUser.token)
         localStorage.setItem("authToken",data.loginUser.token)
         setLoginDetail(initialLoginDetail)
         setAuthToken(data.loginUser.token)
@@ -61,7 +58,6 @@ useEffect(() => {
 
 useEffect(()=>{
     const token = localStorage.getItem("authToken")
-    console.log(token)
     if(token && token !== "null"){
         setAuthToken(token)
     }
