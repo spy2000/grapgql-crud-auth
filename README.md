@@ -42,19 +42,13 @@ This project is a full-stack web application that utilizes the MERN stack (Mongo
     JWT_EXPIRE=1d
     ```
 
-2. Navigate to the `server` directory:
-
-    ```bash
-    cd server
-    ```
-
-3. Install dependencies:
+2. Install dependencies:
 
     ```bash
     npm install
     ```
 
-4. Run the backend:
+3. Run the backend:
 
     ```bash
     npm run dev
