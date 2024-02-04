@@ -97,7 +97,7 @@ const Signup = () => {
                             <label htmlFor="password">Confirm Password</label>
                             <input type="password" id="cPassword" name="cPassword" placeholder='Confirm Paasword' onChange={onInputChange} value={signupDetail.cPassword} required />
 
-                            <button onClick={createUser}>Login</button>
+                            <button onClick={createUser}>Sign Up</button>
                         </form>
                         <p className='mt-2'>already have account ? <Link to="/login">Login Now</Link></p>
                     </div>
